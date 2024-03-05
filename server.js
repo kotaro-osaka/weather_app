@@ -7,15 +7,15 @@ const app = express();
 
 const apiKey = process.env.API_KEY;
 
-// Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Parse form data POST request and assign to req.body.city
 app.use(express.urlencoded({ extended: true })); // Parse extended forms' more complex data structures
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
+
+// Serve static files from 'public' directory
+app.use(express.static(__dirname + '/public'));
 
 app.post('/weather', (req, res) => {
     const city = req.body.city || 'Osaka';
