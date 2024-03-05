@@ -1,10 +1,14 @@
 const express = require('express');
 const http = require('http');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 
 const apiKey = process.env.API_KEY;
+
+// Serve static files from 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Parse form data POST request and assign to req.body.city
 app.use(express.urlencoded({ extended: true })); // Parse extended forms' more complex data structures
