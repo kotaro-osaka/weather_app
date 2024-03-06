@@ -15,9 +15,9 @@ function fetchWeatherData(city) {
         const weatherDescription = data.weather[0].description;
 
         weatherDataDiv.innerHTML = ''; // Clear any previous content
-        weatherDataDiv.innerHTML += `<h2>Weather in ${city}</h2>`;
-        weatherDataDiv.innerHTML += `<p>Temperature: ${temperature} °C</p>`;
-        weatherDataDiv.innerHTML += `<p>Description: ${weatherDescription}</p>`;
+        weatherDataDiv.innerHTML += `<h2 class="display-medium on-background-text">${city}</h2>`;
+        weatherDataDiv.innerHTML += `<p class="label-large on-background-text">Temperature: ${temperature} °C</p>`;
+        weatherDataDiv.innerHTML += `<p class="label-large on-background-text">Description: ${weatherDescription}</p>`;
     }) 
     .catch(error => {
         console.error('Error fetching weather data:', error);
@@ -25,11 +25,13 @@ function fetchWeatherData(city) {
     });
 }
 
-document.getElementById('weather-form').addEventListener('submit', (event) => {
+document.getElementById('search-bar').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent default form submission
 
-    fetchWeatherData(document.getElementById('city').value);
+    fetchWeatherData(document.getElementById('city-input').value);
 });
 
 // Default city
 fetchWeatherData('Osaka');
+
+// Distribute data function
