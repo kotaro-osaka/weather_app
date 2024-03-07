@@ -9,16 +9,16 @@
     </head>
     <body>
         <nav id="top-nav">
-            <h2 id="city">Cityyy</h2>
+            <h2 id="city" class="text-gradient">Port-au-Prince</h2>
             <form id="search-bar">
                 <span class="material-symbols-outlined">search</span>
                 <input type="text" name="city" id="city-input" placeholder="Enter City Name" autocomplete="off" required>
                 <button type="submit"><span class="material-symbols-outlined">navigate_next</span></button>
             </form>
-            <div id="current-location">
+            <button id="current-location">
                 <span class="material-symbols-outlined">my_location</span>
                 <p>Current Location</p>
-            </div>
+            </button>
         </nav>
 
         <div id="weather-data"></div>
@@ -26,3 +26,5 @@
         <script src="/script.js"></script>
     </body>
 </html>
+
+<!-- Give top nav min-width -->
