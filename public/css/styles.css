@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+@import url('./reset.css');
+@import url('./colors.css');
+@import url('./fonts.css');
+@import url('./modules.css');
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	width: auto !important;
+}
+
+/* ---- Header ---- */
+header {
+	width: 100%;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+#city-name {
+	white-space: nowrap;
+}
+/* move display to @media !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! so can be determined on launch*/
+#display-search-bar {
+	display: none;
+}
+
+#search-bar {
+	width: 750px;
+	padding: 16px;
+	border-radius: 10rem;
+	max-width: 750px;
+	min-width: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 5px;
+	flex-wrap: nowrap;
+	background-color: var(--secondary-container);
+	color: var(--text);
+}
+
+#search-bar .material-symbols-outlined {
+	cursor: default;
+	opacity: 60%;
+}
+
+#city-name-input {
+	width: 100%;
+}
+
+#city-name-input:focus {
+	outline: none;
+}
+
+#city-name-input::placeholder {
+	color: var(--text);
+}
+
+#icon-wrapper {
+	display: flex;
+	gap: 1rem;
+	width: fit-content;
+}
+
+/* ---- Media ---- */
+
+@media (max-width: 739px) {
+	#current-location p {
+		display: none;
+	}
+}
+
+@media (max-width: 628px) {
+	#display-search-bar {
+		display: flex;
+	}
+	#search-bar {
+		display: none;
+	}
+}
+
+@media (max-width: 627px) {
+	#city-name {
+		white-space: wrap;
+	}
+}

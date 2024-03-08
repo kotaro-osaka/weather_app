@@ -1,0 +1,54 @@
+@media (prefers-color-scheme: light) {
+	:root {
+	  --text: #090f16;
+	  --background: #81818180;
+	  --primary: #264464;
+	  --secondary: #7aa4d1;
+	  --accent: #3467a2;
+	  --primary-container: #c8d2db;
+	  --secondary-container: #e4ecf5;
+	  --accent-container: #d8e5f1;
+	}
+  }
+@media (prefers-color-scheme: dark) {
+	:root {
+	  --text: #e9eff6;
+	  --background: #060b0f;
+	  --primary: #9bb9d9;
+	  --secondary: #2e5885;
+	  --accent: #5d90cb;
+	  --primary-container: #242e37;
+	  --secondary-container: #122232;
+	  --accent-container: #0e1b27;
+	}
+}
+
+:root {
+	--linearPrimarySecondary: linear-gradient(120deg, var(--primary), var(--secondary));
+	--linearPrimaryAccent: linear-gradient(120deg, var(--primary), var(--accent));
+	--linearSecondaryAccent: linear-gradient(120deg, var(--secondary), var(--accent));
+	--radialPrimarySecondary: radial-gradient(var(--primary), var(--secondary));
+	--radialPrimaryAccent: radial-gradient(var(--primary), var(--accent));
+	--radialSecondaryAccent: radial-gradient(var(--secondary), var(--accent));
+}
+
+.text-gradient-primary-secondary {
+	background-image: var(--linearPrimarySecondary);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.text-gradient-primary-accent {
+	background-image: var(--linearPrimaryAccent);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.text-gradient-secondary-accent {
+	background-image: var(--linearSecondaryAccent);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}

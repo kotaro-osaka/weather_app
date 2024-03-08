@@ -6,7 +6,7 @@ function fetchWeatherData(city) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ city: city }) // Send city data in request body
+        body: JSON.stringify({ city: city })
     })
     .then(response => response.json()) // Parse JSON response from server
     .then(data => {
@@ -14,7 +14,7 @@ function fetchWeatherData(city) {
         const temperature = Math.floor(data.main.temp - 273.15); // Convert Kelvin to Celsius
         const weatherDescription = data.weather[0].description;
 
-        weatherDataDiv.innerHTML = ''; // Clear any previous content
+        weatherDataDiv.innerHTML = '';
         weatherDataDiv.innerHTML += `<h2 class="display-medium on-background-text">${city}</h2>`;
         weatherDataDiv.innerHTML += `<p class="label-large on-background-text">Temperature: ${temperature} °C</p>`;
         weatherDataDiv.innerHTML += `<p class="label-large on-background-text">Description: ${weatherDescription}</p>`;
@@ -28,10 +28,47 @@ function fetchWeatherData(city) {
 document.getElementById('search-bar').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent default form submission
 
-    fetchWeatherData(document.getElementById('city-input').value);
+    fetchWeatherData(document.getElementById('city-name-input').value);
 });
 
 // Default city
 fetchWeatherData('Osaka');
 
+
 // Distribute data function
+
+//use oninput for city suggestions
+
+
+const showSearchBar = () => {
+    document.getElementById('city-name').style.display = 'none';
+    document.getElementById('display-search-bar').style.display = 'none';
+    document.getElementById('search-bar').style.display = 'flex';
+    document.getElementById('city-name-input').focus();
+}
+
+const checkCityNameInputState = () => {
+    if (window.matchMedia('(max-width: 629px)').matches) {
+        document.getElementById('city-name').style.display = 'block';
+        document.getElementById('display-search-bar').style.display = 'flex';
+        document.getElementById('search-bar').style.display = 'none';
+    }
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 740) {
+        document.getElementById('city-name').style.whiteSpace = 'nowrap';
+        document.querySelector('#current-location p').style.display = 'flex';
+    } else if (window.innerWidth >= 629 && window.innerWidth <= 739) {
+        document.getElementById('display-search-bar').style.display = 'none';
+        document.getElementById('search-bar').style.display = 'flex';
+        document.querySelector('#current-location p').style.display = 'none'; 
+    } else if (window.innerWidth >= 500 && window.innerWidth <= 628) {
+        document.getElementById('city-name').style.display = 'block';
+        document.getElementById('city-name').style.whiteSpace = 'nowrap';
+        document.getElementById('display-search-bar').style.display = 'flex';
+        document.getElementById('search-bar').style.display = 'none';
+    } else {
+        document.getElementById('city-name').style.whiteSpace = 'wrap';
+    }
+});
