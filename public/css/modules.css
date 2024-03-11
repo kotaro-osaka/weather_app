@@ -1,3 +1,5 @@
+/* Buttons */
+
 .accent-button {
     display: flex;
     align-items: center;
@@ -11,7 +13,7 @@
     padding: 1rem;
     background-color: var(--accent);
     cursor: pointer;
-    text-wrap: nowrap;
+    white-space: nowrap;
     color: var(--background);
 }
 
@@ -28,6 +30,54 @@
     padding: 1rem;
     background-color: var(--secondary-container);
     cursor: pointer;
-    text-wrap: nowrap;
+    white-space: nowrap;
     color: var(--text);
+}
+
+/* Cards */
+
+.aside-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
+    border-radius: 1rem;
+    width: auto;
+    min-width: max-content;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--accent-container);
+    white-space: nowrap;
+    color: var(--text);
+}
+
+/* Wrappers */
+
+.row-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+
+.icon-wrapper {
+	display: flex;
+	gap: 1rem;
+	width: fit-content;
+}
+
+/* Dividers */
+
+.var-hor-divider {
+    width: 100%;
+    height: 2px;
+    margin: 0.5rem 0;
+    background-color: var(--secondary);
+    opacity: 60%;
 }

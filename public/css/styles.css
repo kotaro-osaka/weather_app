@@ -9,9 +9,7 @@ body {
 	padding: 0;
 }
 
-main {
-	width: auto !important;
-}
+main { width: auto !important; }
 
 /* ---- Header ---- */
 header {
@@ -27,13 +25,9 @@ header {
 	z-index: 100;
 }
 
-#city-name {
-	white-space: nowrap;
-}
-/* move display to @media !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! so can be determined on launch*/
-#display-search-bar {
-	display: none;
-}
+#city { white-space: nowrap; }
+
+#show-search-bar { display: none; }
 
 #search-bar {
 	width: 750px;
@@ -50,39 +44,80 @@ header {
 	color: var(--text);
 }
 
-#search-bar .material-symbols-outlined {
-	cursor: default;
+#search-bar-icon {
 	opacity: 60%;
 }
 
-#city-name-input {
-	width: 100%;
-}
+#city-input { width: 100%; }
 
-#city-name-input:focus {
-	outline: none;
-}
+#city-input:focus { outline: none; }
 
-#city-name-input::placeholder {
-	color: var(--text);
-}
+#city-input::placeholder { color: var(--text); }
 
-#icon-wrapper {
+/* Main */
+
+main {
 	display: flex;
-	gap: 1rem;
-	width: fit-content;
 }
+
+/* Card 1 */
+
+#last-updated {
+	opacity: 60%;
+}
+
+#celsius-icon {
+	width: auto;
+	height: 6rem;
+	margin-left: -1.5rem;
+	margin-top: -0.5rem;
+}
+
+#fahrenheit-icon {
+	display: none;
+	width: auto;
+	height: 6rem;
+	margin-left: -1.5rem;
+	margin-top: -0.5rem;
+}
+
+#current-weather-icon {
+	width: auto;
+	height: 5rem;
+}
+
+#callendar-icon { 
+	margin-right: 0.5rem;
+	color: var(--primary);
+}
+
+#current-date {
+	opacity: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---- Media ---- */
 
 @media (max-width: 739px) {
 	#current-location p {
-		display: none;
-	}
+		display: none; 
+	} 
 }
 
 @media (max-width: 628px) {
-	#display-search-bar {
+	#show-search-bar {
 		display: flex;
 	}
 	#search-bar {
@@ -90,8 +125,8 @@ header {
 	}
 }
 
-@media (max-width: 627px) {
-	#city-name {
-		white-space: wrap;
-	}
+@media (max-width: 627px) { 
+	#city { 
+		white-space: wrap; 
+	} 
 }
