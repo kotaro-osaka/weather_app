@@ -9,10 +9,8 @@ body {
 	padding: 0;
 }
 
-main { width: auto !important; }
-
 /* ---- Header ---- */
-header {
+#main-header {
 	width: 100%;
 	padding: 10px 20px;
 	display: flex;
@@ -23,6 +21,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 100;
+	background-color: var(--background);
 }
 
 #city { white-space: nowrap; }
@@ -44,9 +43,7 @@ header {
 	color: var(--text);
 }
 
-#search-bar-icon {
-	opacity: 60%;
-}
+#search-bar-icon { opacity: 60%; }
 
 #city-input { width: 100%; }
 
@@ -56,15 +53,22 @@ header {
 
 /* Main */
 
+/* Change later to id (see html) */
 main {
 	display: flex;
+	width: auto !important;
+	padding: 20 20;
 }
 
-/* Card 1 */
-
-#last-updated {
-	opacity: 60%;
+aside {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
+
+/* Aside Card 1 */
+
+#last-updated { opacity: 60%; }
 
 #celsius-icon {
 	width: auto;
@@ -91,16 +95,38 @@ main {
 	color: var(--primary);
 }
 
-#current-date {
-	opacity: 80%;
+#current-date { opacity: 80%; }
+
+/* Aside Card 2 */
+
+#forecast-header {
+	margin-bottom: 1rem;
 }
 
+#tomorrow-forecast.row-wrapper {
+	justify-content: space-between;
+	width: 100%;
+}
 
+#tomorrow-forecast > .row-wrapper {
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	gap: 5px;
+}
 
+#tomorrow-humidity-icon {
+	font-size: 1em;
+}
 
+#tomorrow-weather-icon {
+	width: auto;
+	height: 1.5em;
+}
 
-
-
+#tomorrow-min-temp,
+#tomorrow-max-temp {
+	font-weight: 200;
+}
 
 
 
