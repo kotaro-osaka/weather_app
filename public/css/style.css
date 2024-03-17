@@ -56,8 +56,9 @@ body {
 /* Change later to id (see html) */
 main {
 	display: flex;
+	gap: 2rem;
 	width: auto !important;
-	padding: 20 20;
+	margin: 3rem;
 }
 
 aside {
@@ -67,6 +68,14 @@ aside {
 }
 
 /* Aside Card 1 */
+
+#current-weather {
+	background-color: var(--accent-container);
+}
+
+#current-weather .var-hor-divider {
+	background-color: var(--accent);
+}
 
 #last-updated { opacity: 60%; }
 
@@ -99,8 +108,13 @@ aside {
 
 /* Aside Card 2 */
 
+#forecast {
+	font-size: 120%;
+	background-color: var(--primary-container);
+}
+
 #forecast-header {
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 #tomorrow-forecast.row-wrapper {
@@ -112,10 +126,17 @@ aside {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	gap: 5px;
+	font-size: 120%;
+}
+
+#tomorrow {
+	font-size: 75%;
+	opacity: 75%;
 }
 
 #tomorrow-humidity-icon {
 	font-size: 1em;
+	color: var(--accent);
 }
 
 #tomorrow-weather-icon {
@@ -125,9 +146,70 @@ aside {
 
 #tomorrow-min-temp,
 #tomorrow-max-temp {
+	font-size: 90%;
 	font-weight: 200;
 }
 
+/* Copy for elements added by JS */
+
+/* Weather Details */
+
+#weather-details {
+	width: 100%;
+}
+
+#weather-details .var-hor-divider {
+	background-color: var(--accent);
+}
+
+#weather-details-header {
+	width: 100%;
+	margin-bottom: 0.5rem;
+	font-size: 120%;
+	opacity: 60%;
+}
+
+#air-quality-index {
+	width: 50%;
+	background-color: var(--on-primary-container-container);
+}
+
+#air-quality-index-header {
+	justify-content: space-between;
+	width: 100%;
+	gap: 1rem;
+}
+
+#code-green {
+	width: auto;
+	height: 2.5rem;
+}
+
+#air-ware-icon {
+	flex: none;
+	margin-right: 1rem;
+	font-size: 2.5rem;
+	color: var(--accent);
+}
+
+#air-quality-index-body {
+	width: 100%;
+}
+
+#air-quality-index-details {
+	flex: 1;
+	justify-content: space-around;
+	width: 100%;
+	gap: 1rem;
+}
+
+#air-quality-index-details header {
+	opacity: 80%;
+}
+
+#air-quality-index-details small {
+	font-size: 125%;
+}
 
 
 

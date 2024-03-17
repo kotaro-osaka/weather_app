@@ -8,6 +8,7 @@
 	  --primary-container: #c8d2db;
 	  --secondary-container: #e4ecf5;
 	  --accent-container: #d8e5f1;
+	  --inverted-primary-container: #cddced;
 	}
   }
 @media (prefers-color-scheme: dark) {
@@ -17,9 +18,10 @@
 	  --primary: #9bb9d9;
 	  --secondary: #2e5885;
 	  --accent: #5d90cb;
-	  --primary-container: #242e37;
+	  --primary-container: #0e1317;
 	  --secondary-container: #122232;
 	  --accent-container: #0e1b27;
+	  --on-primary-container-container: #14212d;
 	}
 }
 

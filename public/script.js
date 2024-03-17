@@ -1,3 +1,7 @@
+const searchBar = document.getElementById('search-bar');
+const cityInput = document.getElementById('city-input');
+const city = document.getElementById('city');
+ 
 function fetchWeatherData(city) {
     // const weatherDataDiv = document.getElementById('weather-data');
 
@@ -25,10 +29,10 @@ function fetchWeatherData(city) {
     });
 }
 
-document.getElementById('search-bar').addEventListener('submit', (event) => {
+searchBar.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent default form submission
 
-    fetchWeatherData(document.getElementById('city-input').value);
+    fetchWeatherData(cityInput.value);
 });
 
 // Default city
@@ -41,34 +45,34 @@ document.getElementById('search-bar').addEventListener('submit', (event) => {
 
 
 const showSearchBar = () => {
-    document.getElementById('city').style.display = 'none';
+    city.style.display = 'none';
     document.getElementById('show-search-bar').style.display = 'none';
-    document.getElementById('search-bar').style.display = 'flex';
-    document.getElementById('city-input').focus();
+    searchBar.style.display = 'flex';
+    cityInput.focus();
 }
 
 const checkCityInputState = () => {
     if (window.matchMedia('(max-width: 629px)').matches) {
-        document.getElementById('city').style.display = 'block';
+        city.style.display = 'block';
         document.getElementById('show-search-bar').style.display = 'flex';
-        document.getElementById('search-bar').style.display = 'none';
+        searchBar.style.display = 'none';
     }
 }
 
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 740) {
-        document.getElementById('city').style.whiteSpace = 'nowrap';
+        city.style.whiteSpace = 'nowrap';
         document.querySelector('#current-location p').style.display = 'flex';
     } else if (window.innerWidth >= 629 && window.innerWidth <= 739) {
         document.getElementById('show-search-bar').style.display = 'none';
-        document.getElementById('search-bar').style.display = 'flex';
+        searchBar.style.display = 'flex';
         document.querySelector('#current-location p').style.display = 'none'; 
     } else if (window.innerWidth >= 500 && window.innerWidth <= 628) {
-        document.getElementById('city').style.display = 'block';
-        document.getElementById('city').style.whiteSpace = 'nowrap';
+        city.style.display = 'block';
+        city.style.whiteSpace = 'nowrap';
         document.getElementById('show-search-bar').style.display = 'flex';
-        document.getElementById('search-bar').style.display = 'none';
+        searchBar.style.display = 'none';
     } else {
-        document.getElementById('city').style.whiteSpace = 'wrap';
+        city.style.whiteSpace = 'wrap';
     }
 });

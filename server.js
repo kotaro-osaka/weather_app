@@ -3,19 +3,19 @@ const http = require('http');
 const path = require('path');
 require('dotenv').config();
 
-const app = express();
-
 const apiKey = process.env.API_KEY;
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+const app = express();
 
 // Serve static files from 'public' directory
 app.use(express.static(__dirname + '/public'));
 
 // Parse form data POST request and assign to req.body.city
 app.use(express.json());
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
 app.post('/weather', (req, res) => {
     const city = req.body.city || 'Osaka';

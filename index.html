@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather App</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script defer src="/script.js"></script>
     </head>
     <body>
         <header id="main-header">
@@ -46,7 +47,7 @@
                         <small id="current-date">Saturday 9 Nov.</small>
                     </div>
                 </section>
-                <section id="Forecast" class="aside-card">
+                <section id="forecast" class="aside-card">
                     <p id="forecast-header">Forecast</p>
                     <div id="tomorrow-forecast" class="row-wrapper">
                         <small id="tomorrow">Tomorrow</small>
@@ -63,14 +64,44 @@
                     <!-- Other days are added by JS -->
                 </section>
             </aside>
-            <section>
-
+            <section id="weather-details" class="primary-card">
+                <p id="weather-details-header">Details</p>
+                <section id="air-quality-index" class="on-primary-card-lg">
+                    <header id="air-quality-index-header" class="row-wrapper">
+                        <p>Air Quality Index</p>
+                        <div id="air-quality-indicator" class="row-wrapper">
+                            <p>Good</p>
+                            <img id="code-green" src="/assets/meteocons/code-green.svg" alt="code-green">
+                        </div>
+                    </header>
+                    <div class="var-hor-divider"></div>
+                    <div id="air-quality-index-body" class="row-wrapper">
+                        <span id="air-ware-icon" class="material-symbols-rounded">airware</span>
+                        <section id="air-quality-index-details" class="row-wrapper">
+                            <div id="pm25" class="column-wrapper">
+                                <header id="pm25-header">PM2.5</header>
+                                <small id="pm25-value">123</small>
+                            </div> 
+                            <div id="pm10" class="column-wrapper">
+                                <header id="pm10-header">PM10</header>
+                                <small id="pm10-value">123</small>
+                            </div>
+                            <div id="o3" class="column-wrapper">
+                                <header id="o3-header">O3</header>
+                                <small id="o3-value">123</small>
+                            </div>
+                            <div id="no3" class="column-wrapper">
+                                <header id="no3-header">NO3</header>
+                                <small id="no3-value">123</small>
+                            </div>
+                        </section>
+                    </div>
+                </section>
             </section>
         </main>
         <!-- 
         <footer>
         </footer>
         -->
-        <script defer src="/script.js"></script>
     </body>
 </html>
