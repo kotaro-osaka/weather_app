@@ -1,2 +1,2 @@
-# Full-Stack Weather Web App
-Retrieves weather information from OpenWeather's API
+# Weather Web App
+Full-Stack App that retrieves current weather information from OpenWeather's API
